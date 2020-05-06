@@ -1,2 +1,3 @@
+This final project aims to compute and compare the surface energy of Au (110) 1 by 1 ideal surface and Au (110) 1 by 2 missing row reconstruction surface. 
 The final_project.py code is used for calculating the surface energies using the EAM method.
 The final_project_Quantum_Espresso.py is used for calculating the surface energies using DFT. 
