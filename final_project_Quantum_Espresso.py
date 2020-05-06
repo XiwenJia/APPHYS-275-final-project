@@ -14,7 +14,6 @@ from ase.build import stack
 import math
 
 
-'''
 #generating the bulk (for calculating cohesive energy)
 def make_struc(alat):
     """
@@ -28,7 +27,6 @@ def make_struc(alat):
     print('number of atoms in the bulk is', natoms_unitcell)
     structure = Struc(ase2struc(unitcell))
     return structure
-'''
 
 
 #for generating the slab of the perfect FCC Au(110) 1*1 ideal surface
@@ -45,7 +43,7 @@ def make_struc():
     return natoms_ideal,struc_ideal
 
 
-'''
+
 #for generating the slab of the FCC Au(110) 1*2 missing row reconstruction
 def make_struc():   
     slab_ideal=fcc110('Au',size=(4,2,8), a=4.163737636, vacuum=20)
@@ -85,9 +83,9 @@ def make_struc():
     print('number of atoms left',natoms_ideal)
     struc_ideal=Struc(ase2struc(slab_ideal))
     return natoms_ideal,struc_ideal
-'''
 
-'''
+
+
 def compute_energy(alat, nk, ecut):
     """
     Make an input template and select potential and structure, and the path where to run
@@ -128,7 +126,7 @@ def compute_energy(alat, nk, ecut):
     end_time=(time.time()-start_time)
     print('running time is',end_time)
     return output
-'''
+
 
 
 def compute_energy(ecut):
@@ -173,7 +171,7 @@ def compute_energy(ecut):
     return output
 
 
-'''
+
 def lattice_scan():
     
     #test convergence of energy with respect to cutoff energies
@@ -214,7 +212,7 @@ def lattice_scan():
     output = compute_energy(alat=alat, ecut=ecut, nk=nk)
     energy = output['energy']
     print(energy)
-'''    
+   
 
     
 def lattice_scan():  
@@ -234,9 +232,3 @@ if __name__ == '__main__':
     
     
     
-# cohesive energy vs ecut   
-# ecut_list=[41,50,55,65,70,75,80,90]
-# energy_list=[-42184.3721733489,-42184.38503944122,-42184.39131357283,-42184.39510058283,-42184.397205792484,-42184.39643965563,-42184.39848214302,-42184.3978939687]
-# cohesive energy vs k-points
-# nk_list=[4,5,8,9,10,11,12,13,14,15,16]
-# energy_list= [-42184.38503944122,-42184.573975375584,-42184.790380806175,-42184.82172969508,-42184.842904379046,-42184.85965517027,-42184.871625327374,-42184.881689598296,-42184.88923314153,-42184.89475759917,-42184.90050328546]
